@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-//import Ge from "./Ge";
-//import Morse from "./Morse";
-//import Ul from "./Ul";
-//import Cezar from "./Cezar";
 const alfabet = [
   "a",
   "b",
@@ -79,12 +75,6 @@ class App extends Component {
     this.setState({
       msg: string,
     });
-  };
-  handleClick1 = () => {
-    this.codeCesar(1);
-  };
-  handleClick2 = () => {
-    this.codeCesar(-1);
   };
   render() {
     return (
