@@ -21,12 +21,9 @@ class Ul extends Component {
     let string = str.split("");
 
     for (let i = 0; i < allarr.length; i++) {
-      // console.log('i wynosi ' + i)
       for (let j = 0; j < allarr[i].length; j++) {
-        // console.log('j wynosi ' + j)
         for (let k = 0; k < string.length; k++) {
-          // console.log('k wynosi ' + k)
-          if (string[k] == allarr[i][j]) {
+          if (string[k] === allarr[i][j]) {
             string[k] = j + 1 + "/" + (i + 1);
           }
         }
@@ -59,7 +56,7 @@ class Ul extends Component {
       result = result.join("");
       return result;
     } else {
-      return "nieprawidlowy szyfr!";
+      return alert("Nieprawidlowy szyfr! Nie użyłeś ułamka");
     }
   };
   decodeFractionBtn = (str) => {
@@ -79,9 +76,15 @@ class Ul extends Component {
     return (
       <>
         <h1>Szyfr Ulamkowy :</h1>
+        <p>
+          Każdy znak szyfru zapisuje się za pomocą ułamka zwykłego. Litery
+          oddzielmy za pomocą dowolnego operatora matematycznego(Szyfry mogą się
+          różnić ze względu na podział alfabetu).
+        </p>
         <label>
           Tutaj wpisz wiadomość :<br></br>
           <textarea
+            className="label"
             value={this.state.value}
             onChange={this.handleChange}
           ></textarea>
@@ -102,7 +105,11 @@ class Ul extends Component {
         >
           Dekoduj wiadomość !
         </button>
-        <div>{this.state.msg}</div>
+        <div className="solution">
+          {this.state.msg ? `Rozwiązanie :` : null}
+          <br />
+          {this.state.msg ? this.state.msg : null}
+        </div>
       </>
     );
   }

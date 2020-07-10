@@ -19,37 +19,41 @@ class Ge extends Component {
     });
   };
   codeGe = (str, Cipher) => {
-    if (Cipher.length > 25) {
-      return alert("za dlugi szyfr");
-    }
-    if (
-      Cipher.length % 2 === 0 &&
-      Cipher.length !== 2 &&
-      Cipher.length !== 8 &&
-      Cipher.length !== 14 &&
-      Cipher.length !== 20
-    ) {
-      return alert(
-        'nieprawidlowy szyfr! pamietaj aby pary liter oddzielic "-"!'
-      );
-    }
-    let string = str.split(""); //string is array of sings now;
-    let cipher = Cipher.split("-");
-    cipher = cipher.join("");
-    cipher = cipher.split(""); // cipher is a array of sings now, without "-";
-    for (let i = 0; i < string.length; i++) {
-      for (let n = 0; n < cipher.length; n += 2) {
-        if (string[i] === cipher[n]) {
-          string[i] = cipher[n + 1];
-        } else if (string[i] === cipher[n + 1]) {
-          string[i] = cipher[n];
+    if (Cipher === null) {
+      return alert("musisz cos wpisac");
+    } else {
+      if (Cipher.length > 25) {
+        return alert("za dlugi szyfr");
+      }
+      if (
+        Cipher.length % 2 === 0 &&
+        Cipher.length !== 2 &&
+        Cipher.length !== 8 &&
+        Cipher.length !== 14 &&
+        Cipher.length !== 20
+      ) {
+        return alert(
+          'nieprawidlowy szyfr! pamietaj aby pary liter oddzielic "-"!'
+        );
+      }
+      let string = str.split(""); //string is array of sings now;
+      let cipher = Cipher.split("-");
+      cipher = cipher.join("");
+      cipher = cipher.split(""); // cipher is a array of sings now, without "-";
+      for (let i = 0; i < string.length; i++) {
+        for (let n = 0; n < cipher.length; n += 2) {
+          if (string[i] === cipher[n]) {
+            string[i] = cipher[n + 1];
+          } else if (string[i] === cipher[n + 1]) {
+            string[i] = cipher[n];
+          }
         }
       }
+      string = string.join("");
+      this.setState({
+        msg: string,
+      });
     }
-    string = string.join("");
-    this.setState({
-      msg: string,
-    });
   };
   render() {
     return (
@@ -69,13 +73,18 @@ class Ge extends Component {
           <textarea
             value={this.state.value}
             onChange={this.handleChange}
+            className="label"
           ></textarea>
         </label>
         <br />
         <label>
           Tutaj wpisz klucz do szyfru(pamiętaj, litery nie mogą się powtarzać!)
           :<br></br>
-          <input type="tekst" onChange={this.handleKeyChange} />
+          <input
+            type="tekst"
+            onChange={this.handleKeyChange}
+            className="label"
+          />
         </label>
         <br />
         <button
@@ -86,7 +95,11 @@ class Ge extends Component {
           Zakoduj/Odkoduj wiadomość !
         </button>
         <br />
-        <div>{this.state.msg}</div>
+        <div className="solution">
+          {this.state.msg ? `Rozwiązanie:` : null}
+          <br />
+          {this.state.msg ? this.state.msg : null}
+        </div>
       </>
     );
   }

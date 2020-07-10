@@ -33,9 +33,14 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>Witaj w Aplikacji szyfrującej!</h1>
+        <h2>Witaj w Aplikacji szyfrującej!</h2>
         <label>
-          <select name="" id="" onChange={this.handleOptionChange}>
+          <select
+            name=""
+            id=""
+            onChange={this.handleOptionChange}
+            className="select"
+          >
             <option value="0">Wybierz szyfr</option>
             <option value="1">Szyfr Cezara</option>
             <option value="2">Alfabet Morse'a</option>

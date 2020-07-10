@@ -79,17 +79,30 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>szyfr cezara polega na :</h1>
+        <h1>Na czym polega szyfr cezara zwany też szyfrem przesuwającym?</h1>
+        <p>
+          W szyfrach tego typu litera tekstu jawnego (niezaszyfrowanego)
+          zastępowana jest inną, oddaloną od niej o stałą liczbę pozycji w
+          alfabecie.
+        </p>
+        <br />
         <label>
-          Tutaj wpisz wiadomość :<br></br>
+          Tutaj wpisz wiadomość :
+          <br />
           <textarea
+            className="label"
             value={this.state.value}
             onChange={this.handleChange}
           ></textarea>
         </label>
+        <br />
         <label>
-          Tutaj wybierz "przesuniecie" pomiedzy -13 a 13 :<br></br>
-          <input type="number" onChange={this.handleNumberChange} />
+          Tutaj wybierz "przesunięcie" pomiedzy -13 a 13 :<br></br>
+          <input
+            type="number"
+            onChange={this.handleNumberChange}
+            className="label"
+          />
         </label>
         <br />
         <button
@@ -107,7 +120,11 @@ class App extends Component {
         >
           Dekoduj wiadomość !
         </button>
-        <div>{this.state.msg}</div>
+        <div className="solution">
+          {this.state.msg ? `Rozwiązanie :` : null}
+          <br />
+          {this.state.msg ? this.state.msg : null}
+        </div>
       </>
     );
   }

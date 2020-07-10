@@ -263,12 +263,14 @@ class Morse extends Component {
       <>
         <h1>Alfabet Morsa:</h1>
         <p>
-          to jeden z najpopularniejszych sposobów kodowania wiadomości za pomocą
-          kresek i kropek
+          To jeden z najpopularniejszych sposobów kodowania wiadomości za pomocą
+          kresek i kropek. Każdej literze odpowiada konkretny ciąg kresek i
+          kropek właśnie.
         </p>
         <label>
           Tutaj wpisz wiadomość :<br></br>
           <textarea
+            className="label"
             value={this.state.value}
             onChange={this.handleChange}
           ></textarea>
@@ -281,6 +283,7 @@ class Morse extends Component {
         >
           Odszyfruj wiadomość
         </button>
+        <br />
         <button
           onClick={() => {
             this.code(this.state.value);
@@ -288,7 +291,11 @@ class Morse extends Component {
         >
           Zaszyfruj wiadomość
         </button>
-        <div>{this.state.msg}</div>
+        <div className="solution">
+          {this.state.msg ? `Rozwiązanie :` : null}
+          <br />
+          {this.state.msg ? this.state.msg : null}
+        </div>
       </>
     );
   }
