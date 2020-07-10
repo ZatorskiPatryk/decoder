@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-//import Ge from "./Ge";
+import Ge from "./Ge";
 import Morse from "./Morse";
-//import Ul from "./Ul";
+import Ul from "./Ul";
 import Cezar from "./Cezar";
 import Start from "./Start";
 
@@ -23,9 +23,9 @@ class App extends Component {
     } else if (this.state.value === "2") {
       return <Morse></Morse>;
     } else if (this.state.value === "3") {
-      return console.log("ge"); //<Ge></Ge>;
-    } else if (this.state.value === "34") {
-      return console.log("ul"); //<Ul></Ul>;
+      return <Ge></Ge>;
+    } else if (this.state.value === "4") {
+      return <Ul></Ul>;
     } else {
       return <Start></Start>;
     }
@@ -39,8 +39,8 @@ class App extends Component {
             <option value="0">Wybierz szyfr</option>
             <option value="1">Szyfr Cezara</option>
             <option value="2">Alfabet Morse'a</option>
-            <option value="3">ww</option>
-            <option value="4">aaa</option>
+            <option value="3">GA-DE-RY-PO-LU-KI</option>
+            <option value="4">Szyfr Ułamkowy</option>
           </select>
         </label>
         {this.selectValue()}
