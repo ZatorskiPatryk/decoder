@@ -52,6 +52,8 @@ class App extends Component {
       return alert("zły zakres kodowania");
     } else if (typeof number === "string") {
       return alert("przesuniecie musi byc liczbą !");
+    } else if (this.state.number === null) {
+      return alert("nie podales szyfru !");
     }
     let string = this.state.value.split("");
     let arr = [];

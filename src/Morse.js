@@ -12,9 +12,7 @@ class Morse extends Component {
     });
   };
   decode(str) {
-    console.log(str);
     let string = str.split(" ");
-    console.log(string);
     for (let i = 0; i < string.length; i++) {
       switch (string[i]) {
         case ".-":
@@ -136,8 +134,8 @@ class Morse extends Component {
     });
   }
   code(str) {
+    str = str.toLowerCase();
     let string = str.split("");
-
     for (let i = 0; i < string.length; i++) {
       switch (string[i]) {
         case "a":

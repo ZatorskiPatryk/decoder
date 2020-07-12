@@ -19,8 +19,8 @@ class Ge extends Component {
     });
   };
   codeGe = (str, Cipher) => {
-    if (Cipher === null) {
-      return alert("musisz cos wpisac");
+    if (Cipher === null || this.state.msg === null) {
+      return alert("Pole na kod jak i na wiadomośc musi być wypelnione !");
     } else {
       if (Cipher.length > 25) {
         return alert("za dlugi szyfr");
