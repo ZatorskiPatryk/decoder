@@ -3,7 +3,6 @@ import "./App.css";
 class Ul extends Component {
   state = {
     value: "",
-    number: null,
     msg: null,
   };
   handleChange = (e) => {
@@ -12,6 +11,10 @@ class Ul extends Component {
     });
   };
   codeFraction = (str) => {
+    if (this.state.value === "") {
+      alert("musisz wpisac wiadomosc !");
+    }
+
     const arr1 = ["a", "b", "c", "d", "e"];
     const arr2 = ["f", "g", "h", "i", "j"];
     const arr3 = ["k", "l", "m", "n", "o"];
@@ -35,28 +38,32 @@ class Ul extends Component {
     });
   };
   decodeFraction = (str) => {
-    if (str.includes("/")) {
-      // sprawadzanie czy szyfr ma odpowiednie znaki
-      let string = str.split("");
-      string = string.join("");
-      string = string.split("");
-      const arr1 = ["a", "b", "c", "d", "e"];
-      const arr2 = ["f", "g", "h", "i", "j"];
-      const arr3 = ["k", "l", "m", "n", "o"];
-      const arr4 = ["p", "r", "s", "t", "u"];
-      const arr5 = ["v", "w", "x", "y", "z"];
-      const allarr = [arr1, arr2, arr3, arr4, arr5];
-      let result = [];
-      let i = 0;
-      while (i < string.length) {
-        result.push(allarr[string[i + 2] - 1][string[i] - 1]);
-        i += 3;
-      }
+    if (str.length % 3 === 0) {
+      if (str.includes("/")) {
+        // sprawadzanie czy szyfr ma odpowiednie znaki
+        let string = str.split("");
+        string = string.join("");
+        string = string.split("");
+        const arr1 = ["a", "b", "c", "d", "e"];
+        const arr2 = ["f", "g", "h", "i", "j"];
+        const arr3 = ["k", "l", "m", "n", "o"];
+        const arr4 = ["p", "r", "s", "t", "u"];
+        const arr5 = ["v", "w", "x", "y", "z"];
+        const allarr = [arr1, arr2, arr3, arr4, arr5];
+        let result = [];
+        let i = 0;
+        while (i < string.length) {
+          result.push(allarr[string[i + 2] - 1][string[i] - 1]);
+          i += 3;
+        }
 
-      result = result.join("");
-      return result;
+        result = result.join("");
+        return result;
+      } else {
+        return alert("Nieprawidlowy szyfr! Nie użyłeś ułamka");
+      }
     } else {
-      return alert("Nieprawidlowy szyfr! Nie użyłeś ułamka");
+      alert("podales bledny szyfr sproboj jeszcze raz");
     }
   };
   decodeFractionBtn = (str) => {

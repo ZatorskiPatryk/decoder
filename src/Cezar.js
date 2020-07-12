@@ -54,6 +54,8 @@ class App extends Component {
       return alert("przesuniecie musi byc liczbą !");
     } else if (this.state.number === null) {
       return alert("nie podales szyfru !");
+    } else if (this.state.value === "") {
+      return alert("nie podales tresci !");
     }
     let string = this.state.value.split("");
     let arr = [];
@@ -75,6 +77,7 @@ class App extends Component {
     }
     string = string.join("");
     this.setState({
+      value: "",
       msg: string,
     });
   };

@@ -12,6 +12,9 @@ class Morse extends Component {
     });
   };
   decode(str) {
+    if (str === "") {
+      alert("musisz wpisac wiadomosc !");
+    }
     let string = str.split(" ");
     for (let i = 0; i < string.length; i++) {
       switch (string[i]) {
@@ -134,6 +137,9 @@ class Morse extends Component {
     });
   }
   code(str) {
+    if (str === "") {
+      alert("musisz wpisac wiadomosc !");
+    }
     str = str.toLowerCase();
     let string = str.split("");
     for (let i = 0; i < string.length; i++) {
