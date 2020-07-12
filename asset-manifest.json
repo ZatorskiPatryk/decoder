@@ -1,13 +1,13 @@
 {
   "main.css": "/decoder/static/css/main.1304d0e2.chunk.css",
-  "main.js": "/decoder/static/js/main.07b4ed51.chunk.js",
-  "main.js.map": "/decoder/static/js/main.07b4ed51.chunk.js.map",
+  "main.js": "/decoder/static/js/main.4b0fffa9.chunk.js",
+  "main.js.map": "/decoder/static/js/main.4b0fffa9.chunk.js.map",
   "runtime~main.js": "/decoder/static/js/runtime~main.b728153c.js",
   "runtime~main.js.map": "/decoder/static/js/runtime~main.b728153c.js.map",
   "static/js/2.6bf77090.chunk.js": "/decoder/static/js/2.6bf77090.chunk.js",
   "static/js/2.6bf77090.chunk.js.map": "/decoder/static/js/2.6bf77090.chunk.js.map",
   "index.html": "/decoder/index.html",
-  "precache-manifest.8ef8aefc202f24b6b4dd7455190a1027.js": "/decoder/precache-manifest.8ef8aefc202f24b6b4dd7455190a1027.js",
+  "precache-manifest.24261759f3d47294ddc1ce46f1d1b8fd.js": "/decoder/precache-manifest.24261759f3d47294ddc1ce46f1d1b8fd.js",
   "service-worker.js": "/decoder/service-worker.js",
   "static/css/main.1304d0e2.chunk.css.map": "/decoder/static/css/main.1304d0e2.chunk.css.map"
 }
